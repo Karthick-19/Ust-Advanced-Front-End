@@ -1,0 +1,31 @@
+<h3>reactive form works!</h3>
+<div class="container">
+  <form action="" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="">Product Id</label>
+      <input type="text" formControlName="productId" class="form-control" required/>
+    </div>
+
+    <div class="mb-3">
+      <label for="">Brand</label>
+      <input type="text" formControlName="brand" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="">Description</label>
+      <input type="text" formControlName="description" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="">Quantity</label>
+      <input type="text" formControlName="quantity" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="">Price</label>
+      <input type="text" formControlName="price" class="form-control" />
+    </div>
+
+    <button type="submit" [disabled]="!productForm.valid">Submit</button>
+  </form>
+</div>

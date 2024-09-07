@@ -1,0 +1,9 @@
+<p>external-api works!</p>
+<button (click)="onSubmit()">getData
+</button>
+<div *ngFor="let data of datas" class="mb-3">
+    <p>{{data['id']}}</p>
+    <p>{{data['userId']}}</p>
+    <p>{{data['title']}}</p>
+    <p>{{data['body']}}</p>
+</div>

@@ -1,0 +1,12 @@
+.inventory{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 5px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(160, 100%, 75%);
+    min-width: 200px;
+    border: 1px solid;
+}

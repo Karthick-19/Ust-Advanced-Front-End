@@ -1,0 +1,55 @@
+<body [ngClass]="darkMode ? 'dark-theme' : ''">
+<p>mycomponent works!</p>
+<input type="text" [(ngModel)] = "quantity" #handler>
+<p>{{quantity}}</p>
+<!-- <button (click) = "handleClick(handler.value)" >click here</button> -->
+ <p>ngSwitch</p>
+<div [ngSwitch]="quantity">
+    <div *ngSwitchCase="'100'">You got 30% discount</div>
+    <div *ngSwitchCase="'200'">You got 35% discount</div>
+    <div *ngSwitchCase="'300'">You got 40% discount</div>
+</div>
+<br>
+<!-- <p>ngIf</p> -->
+<!-- <input type="text" [(ngModel)] = "quantity" #handler>
+
+<p *ngIf="orderPlaced" class="success">Order Placed</p>
+<p *ngIf="!orderPlaced" class="failure">Not in stock</p> -->
+<!-- <p>{{quantity}}</p> -->
+ <p>Exercise 1</p>
+ <br>
+ <label for=""><input type="checkbox" [(ngModel)] = "change">Change Background</label>
+ <div *ngIf="change" class="success">It works</div>
+ <div *ngIf="!change" class="failure">It Fails</div>
+ <p>Exercise 2</p>
+ <br>
+ <label for="">Select Country: </label>
+ <select name="list" id="" [(ngModel)] = "country" >
+     <option value="+91">India</option>
+     <option value="+1">USA</option>
+     <option value="+61">Australia</option>
+ </select>
+ <br>
+ <label for="">Mobile: <input type="text" [value]="country"></label>
+ <br>
+ <p>Exercise 3</p>
+ <input type="text"  #sub>
+ <input type="submit" value="Submit" (click) = "handleSubmit(sub.value) ">
+ <p>{{message}}</p>
+ <br>
+ <p>Exercise 4 Themes</p>
+ <button (click) = "setDarkMode()">Dark mode</button>
+ <br>
+ <p>Exercise 5 ngFor</p>
+ <div *ngFor="let movie of movies;index as ind;odd as isOdd;even as isEven;first as f;last as l" >
+    <span>{{ind}}</span>
+    <span [ngClass]="{ 'check': isEven,'check2':isOdd,'check3':f,'check4':l}">
+        {{movie}}
+    </span>
+ </div>
+<ng-template #myTemplate>
+    Nothing
+</ng-template>
+<!-- <app-data></app-data> -->
+</body>
+

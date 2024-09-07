@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divArrangements2
+    </title>
+    <style>
+        *{
+            margin: 10px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .main-content{
+            display: grid;
+            grid-template:1fr 1fr/1fr 1fr;
+            border: 1px solid;
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* justify-items: center; */
+            height: 100%;
+            width: 100%;
+        }
+        .content1{
+            display: grid;
+            border:1px solid;
+            background-color: aquamarine;
+            justify-content: end;
+            align-content: end;
+        }.content2{
+            display: grid;
+            /* justify-content: start; */
+            /* align-content: start; */
+            border:1px solid;
+            background-color: blue;
+        }
+        .content3{
+            border:1px solid;
+            background-color: brown;
+        }
+
+        .content4{
+            border:1px solid;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <section class="main-content">
+        <section class="content1">
+            <h2>One</h2>
+        </section>
+        <section class="content2">
+            <h2>Two</h2>
+        </section>
+        <section class="content3">
+            <h2>Three</h2>
+        </section>
+        <section class="content4">
+            <h2>Four</h2>
+        </section>
+    </section>
+</body>
+</html>

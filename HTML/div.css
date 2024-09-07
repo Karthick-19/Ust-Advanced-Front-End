@@ -1,0 +1,37 @@
+*{
+    margin: 10px;
+}
+
+.main-section{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.section-1{
+    display: grid;
+    background-color: aqua;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* align-content: stretch;
+    align-items: center;
+    justify-items: center; */
+    /* justify-content: center; */
+}
+
+.section-1 > div{
+    border: 1px solid;
+    background-color: aquamarine;
+}
+
+
+.section-2{
+    background-color: blueviolet;
+}
+
+.section-3{
+    background-color: chocolate;
+}

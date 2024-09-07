@@ -1,0 +1,15 @@
+<p>items works!</p>
+<button (click)="onSubmit()">List Items</button>
+<div *ngIf="allItems && allItems.length">
+  <h2>Items List</h2>
+  <div class="inventory">
+    <div *ngFor="let items of allItems; let i = index" >
+      <div class="item">
+        <h4>{{ items.name }}</h4>
+        <p>{{ items.price }}</p>
+        <p>{{ items.description}}</p>
+        <p>{{ items.category }}</p>
+      </div>
+    </div>
+  </div>
+</div>

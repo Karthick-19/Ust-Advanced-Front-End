@@ -1,0 +1,7 @@
+<a href="https://docs.angular.lat/guide/inputs-outputs"></a>
+<div *ngFor="let v of value">
+  <p>{{v}}</p>
+</div>
+<app-child 
+(childEvent)="sendData($event)"
+></app-child>

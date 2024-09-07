@@ -1,0 +1,77 @@
+ANGULAR:
+---------
+Components:
+-------------
+Components are essential part of angular we can create multiple components and component within components. Angular works best when there are multiple components then it will be easy to refresh dom.
+Creating a component:(Manually)
+*we have to have a file called "componentname.component.ts" 
+*Then add import called Component in ts file
+*create class and export it within that add variables
+*@Component annotation is a "decorator" which has the metadata and mentions files used in that component
+*for example selector "app-root" which used in the main index file
+*Then templateUrls for specifying the html file
+*Then Stylesurls for specifying css file
+*finally adding it to the index.html (main) or within other components, to use within other components we should add it 
+to that component imports
+*Calling it by its selector name as a tag we can display that component
+
+ Creating a component:(Using CLI)
+ Command to generate compoentn using cli: ng generate component hello-world-2
+ Command to generate compoentn using cli: ng g c hello-world-2
+ A folder inside app folder with the component name will be created, with some basic configurations.
+
+ Data Binding:
+ One way binding - The data will pass only from component to view and not from view to components.
+ We can also do One way binding by using property binding for example we have a component variable called title 
+ it can be passed to a innerText by [innerText] = 'title'
+ WE can also send data from view to component which is also a type of one way binding , it is called Event binding.
+ Two way binding - The data will pass from component to view and vice versa.. changes made in view will reflect for component.
+ for this we can test with FormsModule importing in the component and use [(ngModel)] = 'variable_name' in the component.
+
+ String interpolation:
+ {{variable_name}} mostly used for returning the component variable's text in the view. But it can also used for other purposes
+ like evaluating a mathematical expression, executing function declared in component and can be used to express the variable value 
+ as a property for example as a css property.
+
+ Property binding:
+ A html element is controlled or made changes in it by its properties like diabled, innerText and so on.
+ so we can have component variables and plain Strings to it by following a syntax like  [innerText] = "title"
+ title is a variable and for string. [innerText] ="'Welcome to Angular'"
+
+ Event Binding:
+ Event binding is done to make changes/ events for a property mostly used as function to change in view , function is created in
+ the component. Syntax for event binding is (click)="clickme()",(input) and so on.
+ for a Component value to be directly reflected in the view which is modified by an event as a function in the component
+ in the html we have to follow a syntax like (input) = "handleInput($event)"
+ this $event is important as it refers to the payload of that event in this case it is input.
+ in that function in component we have to update
+ handleInput(event:any){
+    value = event.target.value
+ }
+ this code will help to get proper updation of value in the view of that mentioned 'value' variable.
+
+ Directives:
+ *Structural directives
+ *ngFor typically used as a for loop. used in cases like to display a list of elements in a list tag:
+ <li *ngFor = "let movie of movies" [innerText]="movie">li>
+ *ngSwitchCase same as a switch case statement
+<input type="text" [(ngModel)]="num" />
+<div [ngSwitch]="num">
+  <div *ngSwitchCase="'1'"><p>One</p></div>
+  <div *ngSwitchCase="'2'">Two</div>
+  <div *ngSwitchCase="'3'">Three</div>
+</div>
+*ngIf used for checking a condition and displaying according to it.
+<label for="">Are you 18+<input type="checkbox" [(ngModel)]="allowed"></label>
+<p *ngIf="allowed">Let him in</p>
+<p *ngIf="!allowed">Hat BSDK!</p>
+*ngIf with else block
+in order to display the else block after the variable mentioned in *ngIf="allow; else else-block-name"
+and create a ng-template tag and put #else-block-name in it
+<p *ngIf="allowed; else elseBlock">Let him in</p>
+<!-- <p *ngIf="!allowed">Hat BSDK!</p> -->
+<ng-template #elseBlock>
+    <!-- <p>Hat BSDK!</p> -->
+    <p>Randi ke bache</p>
+</ng-template>
+

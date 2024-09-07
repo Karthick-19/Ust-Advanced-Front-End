@@ -1,0 +1,149 @@
+<p>data works!</p>
+<div class="container">
+  <label for="">Filters</label><br />
+  <label for="">Price</label>
+  <input type="checkbox" [(ngModel)]="enablePriceFilter" />
+  <br />
+  <label for="">brand</label>
+  <input type="checkbox" [(ngModel)]="enableBrandFilter" />
+  Data component which uses external products
+  <select name="" id="" [(ngModel)]="filterValue" *ngIf="enablePriceFilter">
+    <option value="50000">&lt;50000</option>
+    <option value="100000">&lt;100000</option>
+    <option value="100000">&lt;200000</option>
+  </select>
+  <select [(ngModel)]="filterBrand" *ngIf="enableBrandFilter">
+    <option *ngFor="let b of brand" [value]="b">{{ b }}</option>
+  </select>
+ 
+    <!-- <ng-template #box>
+    
+    </div>
+  </ng-template> -->
+  </div>
+  <p>---------------------------------------------------------------------</p>
+  <p>Pipes</p>
+  <p>Unformatted Date: {{ toDate }}</p>
+  <p>Formatted Date: {{ toDate | date }}</p>
+  <p>Long Date: {{ toDate | date : "long" }}</p>
+  <p>Full Date: {{ toDate | date : "full" }}</p>
+  <p>Medium Date: {{ toDate | date : "medium" }}</p>
+  <p>Short Date: {{ toDate | date : "short" }}</p>
+  <p>Short Time: {{ toDate | date : "shortTime" }}</p>
+  <p>Medium Time: {{ toDate | date : "mediumTime" }}</p>
+  <p>Long Time: {{ toDate | date : "fullTime" }}</p>
+  <p>Era: {{ toDate | date : "G" }}</p>
+  <p>Month: {{ toDate | date : "MM" }}</p>
+  <p>Month name: {{ toDate | date : "MMMM" }}</p>
+  <p>Date: {{ toDate | date : "E" }}</p>
+  <p>Month name: {{ toDate | date : "EEEE" }}</p>
+  <br />
+  <p>Currency Pipe</p>
+  <p>Unformatted data:{{ money }}</p>
+  <p>Dollars:{{ money|currency:'USD' }}</p>
+  <p>Rupees:{{ money|currency:'INR' }}</p>
+  <p>Chinese Yuan:{{ money|currency:'CNY' }}</p>
+  <br><p>Slice Pipe</p>
+  <p>Unformatted text:{{sample}}</p>
+  <p>Example 1:{{sample|slice:0:8}}</p>
+  <p>Example 2:{{sample|slice:-7}}</p>
+  <p>Example 3:{{sample|slice:7:10}}</p>
+  <p>Uppercase: {{sample|uppercase}}</p>
+  <p>Lowercase: {{sample|lowercase}}</p>
+  <div>
+    <p>Without JSON pipe:</p>
+    <pre>{{ object }}</pre>
+    <p>With JSON pipe:</p>
+    <pre>{{ object | json }}</pre>
+  </div>
+  <div class="product-entry">
+    <form (ngSubmit)="onSubmit()">
+      <!-- <div class="form-group">
+        <label for="">ProductId</label>
+        <input 
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)] = "product.productId"
+        name="productId"
+        >
+      </div> -->
+      <div class="form-group">
+        <label for="">Product Brand</label>
+        <input 
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)] = "product.brand"
+        name="brand"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Product Description</label>
+        <input 
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)] = "product.description"
+        name="description"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Product Quantity</label>
+        <input 
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)] = "product.qty"
+        name="qty"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Product Price</label>
+        <input 
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)] = "product.price"
+        name="price"
+        >
+      </div>
+      <button type="submit" >Submit</button>
+      <button type="reset" >Reset</button>
+    </form>
+  </div>
+  <div>
+    <!-- <div style="display: flex; flex-wrap: wrap">
+      <div *ngFor="let product of products">
+        @if((product.price <= this.filterValue && enablePriceFilter) ||
+        (product.brand == filterBrand|| filterBrand=='all') &&
+        enableBrandFilter){
+        <div class="items">
+          <p>{{ product.productId }}</p>
+          <p>{{ product.brand }}</p>
+          <p>{{ product.description }}</p>
+          <p>{{ product.qty }}</p>
+          <p>{{ product.price }}</p>
+        </div> -->
+        <!-- } -->
+      <!-- </div>
+    </div> -->
+    <table>
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Brand</td>
+          <td>Description</td>
+          <td>Quantity</td>
+          <td>Price</td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of products">
+        <!-- <td>{{ product.productId }}</td> -->
+        <td>{{ product.brand }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.qty }}</td>
+        <td>{{ product.price }}</td>
+      </tbody>
+    </table>
+</div>

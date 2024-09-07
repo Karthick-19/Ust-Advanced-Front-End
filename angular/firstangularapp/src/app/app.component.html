@@ -1,0 +1,13 @@
+<!-- -->
+<div>
+  <!-- <app-reactive></app-reactive> -->
+  <!-- <app-form-w></app-form-w>  -->
+   <!-- <app-form></app-form> -->
+   <!-- <app-token></app-token> -->
+   <!-- <app-external-api></app-external-api> -->
+    <input type="text" [(ngModel)]="title">
+    <button (click)="onSubmit()">send data</button>
+    <app-lifecycle
+    [display]="data">
+  </app-lifecycle>
+</div>

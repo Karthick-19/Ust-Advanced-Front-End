@@ -1,0 +1,28 @@
+/* .formcontainer{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    border: 1px solid;
+    padding: 50px;
+    /* max-width: 400px; */
+/* } */ 
+.forms{
+    display: grid;
+    justify-content: center;
+}
+.Signup{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+.alert{
+    background-color: white;
+    color: red;
+    border: 1px solid;
+}
+.prod-container{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}

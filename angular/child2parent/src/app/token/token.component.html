@@ -1,0 +1,17 @@
+<h2>Token Component!</h2>
+<div class="container">
+  <form action="" (ngSubmit)="onSubmit()" >
+    <div class="mb-3">
+      <label for="">Username</label><br>
+      <input type="text" [(ngModel)]="detail.username" name="username" />
+    </div>
+    <div class="mb-3">
+      <label for="">Password</label><br>
+      <input type="password" [(ngModel)]="detail.password" name="password" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<p class="mb-3" *ngIf="jwt!=null">jwt Token: {{jwt}}</p>
+<br><br>
+<button (click)="sendAuthHeader()">Proceed</button>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <script>
+      //   alert("Welcome master..")
+      //   confirm("Would you like to save changes in this file");
+      //   let loc = "Salem";
+      //   loc = prompt("Enter your loaction",loc);
+      //   alert("Your location "+loc);
+      //   let dataNum = 100;
+      //   alert(typeof(dataNum));
+      //   let dataString = "HP";
+      //   alert(typeof(dataString));
+      //   let dataBool = false;
+      //   alert(typeof(dataBool));
+      //   Difference Between isnan() and Number.isnan()
+      //   isNaN() method returns true if a value is Not-a-Number.
+
+      //   Number.isNaN() returns true if a number is Not-a-Number.
+
+      //   In other words:
+
+      //   isNaN() converts the value to a number before testing it.
+      document.writeln("Hello dhostoh..");
+      // //Variable declaration: let var const
+      // // let used for local scope
+      // // var used for global scope
+      // //const constant
+      // var num ;
+      // num = parseInt(prompt("Enter a number:",num))
+      // if(num%2==0){
+      //     alert("Given number is even")
+      // }
+      // else
+      // {alert("Given number is odd")};
+
+      // var fib;
+      // fib = parseInt(prompt("Enter fibonacci input number"))
+      // function fibonacci(fib){
+      //     if(fib <= 1){
+      //         return fib;
+      //     }
+      //     return fibonacci(fib - 1) + fibonacci(fib - 2);
+      // }
+      // alert("Fibonacci: "+fibonacci(fib))
+
+      // var fact
+      // fact = parseInt(prompt("Enter Factorial input number"))
+      // const factorial = (fact)=>{
+      //     if(fact <= 1){
+      //         return 1
+      //     }
+      //     return fact * factorial(fact - 1)
+      // }
+      // alert("Factorial: "+factorial(fact))
+
+      for (var i = 1; i <= 6; i++) {
+        document.writeln(`<h${i}>Javascript</h${i}>`);
+      }
+      // ------------------------------Arrays--------------------------------------------
+      var data = [10, 20, 30, 40, 50];
+      console.log(data);
+      data.push(60); //Inserts element at end
+      console.log(data);
+      var i = data.pop(); //removes last element and returns it
+      data.shift();
+      console.log(data); //removes first element and returns it
+      data.unshift(200, 300);
+      console.log(data);
+      var d = [1, 2, 34, 5, 2, 21];
+      // function sumDat(){
+      //     var total = 0;
+      //     for(var i in data){
+      //         total += data[i];
+      //     }
+      //     alert(total)
+      // }
+      // sumDat();
+      //other way
+      var curSum;
+      function sumData() {
+        curSum = 0;
+        d.forEach((item) => {
+          curSum += item;
+        });
+        alert(curSum);
+      }
+      // sumData()
+      document.write("<table>");
+      for (var i = 1; i <= 10; i++) {
+        // document.writeln(`<p>${i}</p>`)
+        document.write("<tr>");
+        for (var j = 1; j <= 10; j++) {
+          document.write(
+            `<td style= "width:50px; border:1px solid black;">${i * j}</td>`
+          );
+        }
+        document.write("<tr>");
+      }
+      document.write("</table>");
+      //Filter method
+      const d1 = [1, 55, 21, 4, 22, 6, 21, 90, 69];
+      const filterData = d1.filter((n) => {
+        return n % 2 == 0;
+      });
+      //Map
+      const members = ["Mike","Rick","Henry"]
+      const mapName = members.map((m) => {
+        return m + " Rodick"
+      })
+      console.log(mapName)
+
+      console.log(filterData);
+
+      const af = (n)=>{
+        return n*n
+      }
+      const f = function(n){
+        return n*n;
+      }
+      const af2 = (n,n2) => {
+        return n+n2
+      }
+      const f2 = function(n,n2){
+        return n+n2
+      }
+      var r = af(3);
+    //   alert(r)
+      //callback function
+      const isEven = (n) => {
+        return n % 2 == 0
+      }
+      let printMsg = (evenFunc,num) => {
+        const isNumEven = evenFunc(num);
+        console.log(`${num} is an even number: ${isNumEven}`)
+      }
+      printMsg(isEven,16);
+    //------------------------------Objects--------------------------------------
+    var movie = {
+        name:"Titanic",
+        year:1997
+    }
+    console.log(movie["year"])
+    movie.hero="Jack"
+    console.log(movie.hero)
+
+    var obj = {
+        data:[
+            {"company":"Google","Location":"San francisco","Country":"USA","Employees":10000},
+            {"company":"TCS","Location":"Mumbai","Country":"INDIA","Employees":20000},
+            {"company":"UST","Location":["Trivandrum"],"Country":"INDIA","Employees":10000}
+        ]
+    }
+
+    console.log(JSON.stringify(obj.data))
+    console.log(obj.data[2])
+    obj.data[2].Location = "Thiruvananthapuram"
+    console.log(obj.data)
+
+    const filterData2 =  obj.data.filter((d) => {
+        return d.Employees >5000 && d.Country === "INDIA";
+    })
+
+    const mapHire = obj.data.map((d) => {
+        d.Employees+=1000
+        return d
+    })
+
+    console.log(filterData2)
+    console.log(mapHire)
+    // obj.data = mapHire
+    console.log(obj.data)
+
+    </script>
+  </head>
+  <body></body>
+</html>

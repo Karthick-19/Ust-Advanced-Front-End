@@ -1,0 +1,15 @@
+<h4>list Component works!</h4>
+<div *ngIf="cars.length > 5; then listspaceCheck; else listCars"></div>
+<ng-template #listCars>
+  <li *ngFor="let car of cars">{{ car }}</li>
+</ng-template>
+<!-- <ng-template #noData>
+  <div *ngIf="cars.length == 0;else listspaceCheck">
+    <p>No Data in the list</p>
+  </div>
+</ng-template> -->
+<ng-template #listspaceCheck> 
+    <div>{{sendMessage()}}</div>
+    <li *ngFor="let car of cars">{{ car }}</li>
+</ng-template>
+<!-- <button (click)="sendMessage()">Limit?</button> -->

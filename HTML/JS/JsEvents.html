@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScriptEvents</title>
+    <script>
+      const sayGreet = () => {
+        alert("Vanakkam");
+      };
+      const showSeason = () => {
+        var month = new Date().getMonth();
+        if (month >= 6 && month < 9) alert("Monsoon season");
+      };
+      const green = () => {
+        document.getElementById("greenD").style.backgroundColor = "green";
+        document.getElementById("greenD").textContent = "I AM PACHAI";
+      };
+      const blue = () => {
+        document.getElementById("blueD").style.backgroundColor = "blue";
+      };
+      const stopEffects = () => {
+        document.stopEffects();
+      };
+      const handleSubmit = () => {
+        alert("Validating");
+        var u = document.login.username.value;
+        var p = document.login.password.value;
+        if (p.len <= 8) return true;
+        else return false;
+      };
+    </script>
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="button" value="Greet" onclick="sayGreet()" />
+      <input type="button" value="Season" onclick="showSeason()" />
+
+      <input type="button" value="Green" onclick="green()" />
+      <input type="button" value="Blue" onclick="blue()" />
+
+      <input type="button" value="OFF" onclick="stopEffects()" />
+    </form>
+
+    <div class="greendiv" id="greenD">
+      I am Green Lantern <br />
+      <br />
+      <br />
+    </div>
+    <div class="bluediv" id="blueD">
+      I am Aqua man <br />
+      <br />
+      <br />
+    </div>
+
+    <form name="login" action="" method="post" onsubmit="return handleSubmit()">
+      <fieldset>
+        <legend>Login Form</legend>
+        <label for="">username</label>
+        <input type="text" name="username" id="uid" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="pid" />
+        <input type="submit" value="GO" />
+        <input type="reset" value="clear" />
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<h4>form Component works!</h4>
+<label for="car">Enter Car name: </label>
+<input type="text" [(ngModel)]="car">
+<button type="submit" (click)="onSubmit()">Submit</button>
+<p *ngIf="receiveData">Message: {{value}}</p>
+<!-- <ul>
+    <li *ngFor="let car of cars">{{car}}</li>
+</ul> -->
+<app-list
+[carsInput]="cars"
+(outputEvent)="receiveData($event)"
+></app-list>
+

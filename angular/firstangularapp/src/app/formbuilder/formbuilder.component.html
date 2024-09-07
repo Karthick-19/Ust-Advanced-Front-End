@@ -1,0 +1,47 @@
+<!-- <p>formbuilder works!</p>
+<div class="container">
+  <form action="" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="">Product Id</label>
+      <input type="text" formControlName="productId" class="form-control" required/>
+    </div>
+
+    <div class="mb-3">
+      <label for="">Brand</label>
+      <input type="text" formControlName="brand" class="form-control" />
+    </div>
+
+    <div formGroupName="description" class="mb-3">
+        <label for="">Description:</label><br>
+        <label for="">Age: <input type="text" formControlName="age"></label>
+        <label for="">
+            Seasons: <input type="text" formControlName="seasons">
+        </label>
+    </div>
+
+    <div class="mb-3">
+      <label for="">Quantity</label>
+      <input type="text" formControlName="quantity" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="">Price</label>
+      <input type="text" formControlName="price" class="form-control" />
+    </div>
+
+    <div formArrayName="suppliers" class="mb-3">
+        <label for="">Suppliers</label>
+        <button (click)="addNewSupplier()">Add new Supplier</button>
+
+        <div *ngFor="let supplier of suppliers.controls;let i = index">
+            <label for="">New Supplier:
+                <input type="text" [formControlName] ="i">
+            </label>
+        </div>
+    </div>
+
+    
+    <button type="submit" [disabled]="!productForm.valid">Submit</button>
+  </form>
+</div>
+ -->

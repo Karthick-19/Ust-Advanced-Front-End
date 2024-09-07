@@ -1,0 +1,196 @@
+<!-- <!-- <p>form works!</p>
+<body class="bg-secondary bg-gradient">
+  <div class="forms">
+    <div
+      class="border border-2 rounded p-5"
+      [ngStyle]="{ backgroundColor: borderHover ? 'lightgrey' : 'white' }"
+      (mouseover)="borderHover = true"
+      (mouseout)="borderHover = false"
+    >
+      <form  (ngSubmit)="onSubmit()">
+        <h1>Login page</h1>
+        <div class="mb-3 form-group">
+          <label for="exampleInputEmail1" class="form-label">Email </label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            required
+            name="email"
+            appMinEmailLength="20"
+            [(ngModel)]= "emailId"
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && email.touched" class="alert">
+            <p *ngIf="email.errors?.['minEmailLength']">Email must be at least 20 characters long.</p>
+            <p *ngIf="email.errors?.['required']">Email is required.</p>
+            <p *ngIf="email.errors?.['email']">Enter a valid email address.</p>
+          </div>
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+<!-- </div> -->
+<!-- <div class="mb-3 form-group">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+          />
+        </div>
+        <div class="mb-3 form-check form-group">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <div class="Signup">
+          <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="signup2">
+            <p class="m-0">New here?</p>
+            <a href="#">Signup</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div> -->
+<!-- </body> -->
+<!-- <div class="prod-container">
+  <form action="" (ngSubmit)="OnSubmit()"  name="productForm">
+    <h2>Create a new product</h2>
+    <div class="mb-3">
+      <label for="pid" class="form-label">Product ID</label>
+      <input
+        [(ngModel)]="product.productId"
+        type="text"
+        name="pid"
+        id="pid"
+        class="form-control"
+        placeholder="p01"
+        required
+        minlength="4"
+        #pid="ngModel"
+        appForbiddenName="customValidationDemo"
+      />
+      <div *ngIf="pid.invalid && (pid.dirty || pid.touched)" class="alert">
+        Please provide a valid product ID
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Description</label>
+      <input
+        [(ngModel)]="product.description"
+        type="text"
+        name="desc"
+        id="desc"
+        class="form-control"
+        placeholder="Samsung A10"
+        required
+        maxlength="100"
+        #pdesc="ngModel"
+      />
+    </div>
+    <div *ngIf="pdesc.invalid && (pdesc.dirty || pdesc.touched)" class="alert">
+      Please provide a valid description
+    </div>
+    <div class="mb-3">
+      <label for="brand" class="form-label">Brand</label>
+      <input
+        [(ngModel)]="product.brand"
+        type="text"
+        name="brand"
+        id="brand"
+        class="form-control"
+        placeholder="Samsung"
+        required
+        maxlength="15"
+        #pbrand="ngModel"
+      />
+    </div>
+    <div *ngIf="pbrand.invalid && (pbrand.dirty && pbrand.touched)" class="alert">
+      Please provide a valid brand
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <input
+        [(ngModel)]="product.category"
+        type="text"
+        name="category"
+        id="category"
+        class="form-control"
+        placeholder="Mobile"
+        required
+        maxlength="20"
+        #pcat="ngModel"
+      />
+    </div>
+    <div *ngIf="pcat.invalid && (pcat.dirty || pcat.touched)" class="alert">
+      Please provide proper category
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add" />
+  </form>
+</div> -->
+<h2>Form</h2>
+<div class="prod-container">
+  <form action="" (ngSubmit)="OnSubmit()" #form name="productForm">
+      <h2>Create a new product</h2>
+      <h3>Enter product into Database</h3>
+      <div class="mb-3">
+          <label for="desc" class="form-label">Description</label>
+          <input [(ngModel)]="product.description" type="text" name="desc" id="desc" class="form-control" placeholder="Description" 
+          required minlength="5" #poddes="ngModel" appForbiddenName="desvalidation">
+          <div *ngIf="poddes.invalid && (poddes.dirty || poddes.touched)" class="alert">Please provide a description which is suitable </div>
+      </div>
+      <div class="mb-3">
+          <label for="brand" class="form-label">Brand</label>
+          <input [(ngModel)]="product.brand" type="text" name="brand" id="brand" class="form-control" placeholder="Samsung" 
+          required minlength="5">
+          
+      </div>
+      <div class="mb-3">
+          <label for="qty" class="form-label">Qty</label>
+          <input [(ngModel)]="product.qty" type="number" name="qty" id="qty" class="form-control" required>       
+      </div>
+  
+      <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input [(ngModel)]="product.price" type="text" name="price" id="price" class="form-control" required>       
+      </div>
+  
+      <input type="submit" class="btn btn-primary" value="Add">
+  </form>
+</div>
+<br>
+<div class="container">
+  <h3>Fetch all products from database</h3>
+<button (click)="fetchAll()">Fetch products</button>
+<div *ngFor="let pro of products">
+  <p>id:{{pro.prodId}}</p>
+  <p>desc:{{pro.description}}</p>
+  <p>brand:{{pro.brand}}</p>
+  <p>quantity:{{pro.qty}}</p>
+  <p>price:{{pro.price}}</p>
+</div>
+</div><br>
+<div class="container">
+  <h3>Fetch product by id</h3>
+  <input type="text"[(ngModel)] = "id">
+  <button (click)="fetchById()">By Id</button>
+  <div>
+    <p>{{productById.prodId}}</p>
+    <p>{{productById.description}}</p>
+    <p>{{productById.brand}}</p>
+    <p>{{productById.qty}}</p>
+    <p>{{productById.price}}</p>
+  </div>
+</div><br>
+<div class="container">
+  <h3>Delete product by id</h3>
+  <input type="text"[(ngModel)] = "id">
+  <button (click)="deleteById()">Delete by id</button>
+  <div>
+    <p>{{productByIdDelete.status}}</p>
+  </div>
+</div>

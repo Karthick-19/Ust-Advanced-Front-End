@@ -1,0 +1,13 @@
+<p>child works!</p>
+
+<input type="text" [(ngModel)] = "childItem">
+<button (click)="addChildren()">Add Item</button>
+
+<div *ngFor="let pro of products">
+    <p>{{pro.id}}</p>
+    <p>{{pro.name}}</p>
+    <p>{{pro.description}}</p>
+    <p>{{pro.price}}</p>
+    <p>{{pro.category}}</p>
+</div>
+<p>look</p>

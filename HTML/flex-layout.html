@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex layout</title>
+    <style>
+      body {
+        font-size: 10px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        /* width: 500px; */
+        width: 100vw;
+        height: 100vh;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+      }
+      /* .container > div {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center; 
+        
+      } */
+      .container1 {
+        width: 50px;
+        background-color: aquamarine;
+      }
+      .container2 {
+        width: 50px;
+        background-color: beige;
+      }
+      .container3 {
+        width: 50px;
+        background-color: blueviolet;
+      }
+      .container4 {
+        width: 50px;
+        background-color: brown;
+      }
+      .container5 {
+        width: 50px;
+        background-color: cyan;
+      }
+      .container6 {
+        width: 50px;
+        background-color: chartreuse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex layout</h1>
+    <div class="container">
+      <div class="container1">1</div>
+      <div class="container2">2</div>
+      <div class="container3">3</div>
+      <div class="container4">4</div>
+      <div class="container5">5</div>
+      <div class="container6">6</div>
+    </div>
+  </body>
+</html>

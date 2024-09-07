@@ -1,0 +1,78 @@
+<h2>hello-world-2 works!</h2>
+<h3>{{ name }}</h3>
+<p [innerText]="'Welcome ' + name"></p>
+<input type="text" [(ngModel)]="name" />
+<br />
+<button (click)="clickMeIncrease()">Add</button>
+<p [innerText]="clickCount"></p>
+<button (click)="clickMeDecrease()">Reduce</button>
+<br />
+<input type="text" (input)="handleInput($event)" />
+<p>{{ value }}</p>
+<br />
+<li *ngFor="let movie of movies" [innerText]="movie"></li>
+<br />
+<p>ngSwitch</p>
+<input type="text" [(ngModel)]="num" />
+<div [ngSwitch]="num">
+  <div *ngSwitchCase="'1'"><p>One</p></div>
+  <div *ngSwitchCase="'2'">Two</div>
+  <div *ngSwitchCase="'3'">Three</div>
+</div>
+<br />
+<p>ngIf</p>
+<label for="">Are you 18+<input type="checkbox" [(ngModel)]="allowed" /></label>
+<p *ngIf="allowed; else elseBlock">Let him in</p>
+<!-- <p *ngIf="!allowed">Hat BSDK!</p> -->
+<ng-template #elseBlock>
+  <!-- <p>Hat BSDK!</p> -->
+  <p>Randi ke bache</p>
+</ng-template>
+<br />
+<p>ngStyle</p>
+<input type="text" [(ngModel)]="color" />
+<div
+  [ngStyle]="{
+    'background-color': color,
+    width: '50px',
+    height: '50px'
+  }"
+></div>
+<br /><br />
+<p>ngStyle Assignment</p>
+<p>on hover color will change to pink</p>
+<div
+  [ngStyle]="{
+    'display':'grid',
+    'background-color': isHovering ? 'pink' : 'black',
+    'justify-content': isHovering ? 'center' : 'start'
+  }"
+  (mouseover)="isHovering = true"
+  (mouseout)="isHovering = false"
+  style="padding: 10px; color: white; transition: background-color 0.3s ease"
+>
+  Try it!
+</div>
+<br />
+<p>Date Pipe</p>
+<p>Unformatted Date: {{ toDate }}</p>
+<p>Formatted Date: {{ toDate|date }}</p>
+<p>Medium Date: {{ toDate|date:'medium' }}</p>
+<p>Short Date: {{ toDate|date:'short' }}</p>
+<p>Full Date: {{ toDate|date:'fullDate' }}</p>
+<p>Long Date: {{ toDate|date:'longDate' }}</p>
+<br>
+<p>Upper and lower case pipe</p>
+<p>Original:{{message}}</p>
+<p>UpperCase:{{message|uppercase}}</p>
+<p>LowerCase:{{message|lowercase}}</p>
+<p>Slice Pipe</p>
+<p>Example 1:{{message|slice:10}}</p>
+<p>Example 2 with negative:{{message|slice:-7}}</p>
+<p>Example 3:{{message|slice:0:7}}</p>
+<p>Currency pipe mostly used in real projects</p>
+<p>Unformatted: {{price}}</p>
+<p>Dollars: {{price|currency}}</p>
+<p>Rupees: {{price|currency:'INR'}}</p>
+<p>Australian Dollar: {{price|currency:'AUD'}}</p>
+<p>Chinese Yuan: {{price|currency:'CNY'}}</p>

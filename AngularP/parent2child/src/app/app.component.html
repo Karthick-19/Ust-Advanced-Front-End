@@ -1,0 +1,22 @@
+<div class="container">
+  <h4>Parent Component</h4>
+  <p>Sending data from Parent to Child</p>
+  Name
+  <input type="text" class="form-control" [(ngModel)] = "EnterName">
+  Age
+  <input type="text" class="form-control" [(ngModel)] = "EnterAge">
+  Marital Status
+  <input type="text" class="form-control" [(ngModel)] = "EnterStatus">
+  <input type="button" value="send" (click)="transferData()" class="btn btn-primary">
+
+</div>
+<!-- -- [child variable] = "Parent variable" -- -->
+<app-child 
+[parentData1]="parentData1"
+[parentData2]="parentData2"
+[parentData3]="parentData3"
+></app-child>
+<p>{{value}} in the parent</p>
+<app-about
+(sendData) = "sendData($event)" 
+></app-about>

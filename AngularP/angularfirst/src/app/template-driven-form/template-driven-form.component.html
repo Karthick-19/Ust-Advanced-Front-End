@@ -1,0 +1,90 @@
+<h2>template-driven-form works!</h2>
+<!-- contactForm is a template reference variable here... -->
+<form #contactForm="ngForm" (submit)="onSubmit(contactForm)">
+  <!-- Text input -->
+  <label for="name">Name:</label><br />
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required
+    [(ngModel)]="contact.name"
+  /><br /><br />
+
+  <!-- Email input -->
+  <label for="email">Email:</label><br />
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    [(ngModel)]="contact.email"
+  /><br /><br />
+
+  <!-- Checkbox input -->
+  <label for="newsletter">Subscribe to our newsletter:</label><br />
+  <input
+    type="checkbox"
+    id="newsletter"
+    name="newsletter"
+    [(ngModel)]="contact.newsletter"
+  /><br /><br />
+
+  <!-- Radio buttons -->
+  <label>Gender:</label><br />
+  <input
+    type="radio"
+    id="male"
+    name="gender"
+    value="male"
+    [(ngModel)]="contact.gender"
+  />
+  <label for="male">Male</label><br />
+  <input
+    type="radio"
+    id="female"
+    name="gender"
+    value="female"
+    [(ngModel)]="contact.gender"
+  />
+  <label for="female">Female</label><br />
+  <input
+    type="radio"
+    id="other"
+    name="gender"
+    value="other"
+    [(ngModel)]="contact.gender"
+  />
+  <label for="other">Other</label><br /><br />
+
+  <!-- another form group called address -->
+  <div ngModelGroup class="address" name="address">
+    <label for="Address">Address</label><br />
+
+    <label for="">Street</label>
+    <input
+      type="text"
+      name="street"
+      [(ngModel)]="contact.address.street"
+    /><br />
+
+    <label for="">City</label>
+    <input type="text" name="city" [(ngModel)]="contact.address.city" /><br />
+
+    <label for="">State</label>
+    <input type="text" name="state" [(ngModel)]="contact.address.state" /><br />
+  </div>
+
+  <!-- Submit button -->
+  <input type="submit" value="Submit" />
+</form>
+
+<div *ngFor="let con of contacts">
+    <p>{{con.name}}</p>
+    <p>{{con.email}}</p>
+    <p>{{con.newsletter}}</p>
+    <p>{{con.gender}}</p>
+    <p>{{con.address.street}}</p>
+    <p>{{con.address.city}}</p>
+    <p>{{con.address.state}}</p>
+</div>
